@@ -1,0 +1,20 @@
+sudo yum update
+sudo yum install -y https://rdoproject.org/repos/rdo-release.rpm
+sudo yum install -y centos-release-openstack-mitaka
+sudo yum update -y
+sudo yum install -y openstack-packstack
+sudo packstack --gen-answer-file=~/answers.cfg
+
+Change the following lines to your password
+
+CONFIG_DEFAULT_PASSWORD=IAmGoingIn123
+CONFIG_NAGIOS_PW=IAmGoingIn123
+CONFIG_HEAT_INSTALL=y
+CONFIG_KEYSTONE_ADMIN_PW=IAmGoingIn123
+CONFIG_KEYSTONE_DEMO_PW=IAmGoingIn123 
+
+
+sudo packstack answer-file=~/answers.cfg
+
+vi /etc/httpd/conf.d/15-horizon_vhost.conf
+service httpd restart

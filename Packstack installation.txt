@@ -14,7 +14,7 @@ CONFIG_KEYSTONE_ADMIN_PW=IAmGoingIn123
 CONFIG_KEYSTONE_DEMO_PW=IAmGoingIn123 
 
 
-sudo packstack answer-file=~/answers.cfg
+sudo packstack --answer-file=~/answers.cfg
 
 vi /etc/httpd/conf.d/15-horizon_vhost.conf
 service httpd restart
